@@ -22,7 +22,7 @@ FPS = vidcap.get(cv2.CAP_PROP_FPS)
 fourcc = cv2.VideoWriter_fourcc(*'MJPG') #'XVID')  # Codec for MP4
 
 output = cv2.VideoWriter(
-    HOME_DIR / "processed_videos" / "CiCfl-8_diff_abs-Full.avi",
+    HOME_DIR / "processed_videos" / "CiCfl-8_diff.avi",
     fourcc,
     FPS,
     (WDT, HGT),
@@ -48,24 +48,18 @@ MAX_FRAME = int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT))
 print(f"Write FPS: {FPS}")
 
 while success:
-    # cv2.imwrite(f"frame{frame_counter}.png", image)  # save single frame
     im2 = im1
     success, im1 = read_frame()
 
     if not success:
         break
 
-    print(f"Frame {frame_counter} / {MAX_FRAME}")
+    print(f"Frame {frame_counter} / {MAX_FRAME - 2}")
 
-    diff = np.interp(np.abs(im1-0.95*im2), (0, 128), (0, 255)).astype("uint8")
-    #cv2.imshow("diff", diff)
-    #cv2.waitKey(1)
+    diff = np.interp(im1-0.95*im2, (-128, 128), (0, 255)).astype("uint8")
 
     output.write(diff)
     frame_counter += 1
-
-    # if frame_counter > FPS:
-    #     break
 
 vidcap.release()
 output.release()

@@ -1,4 +1,5 @@
-matplotlib >=3, <4
-numpy >=2, <3
-scipy >=1, <2
-opencv-python >=4, <5
+opencv-python >4, <5
+matplotlib >3, <4
+numpy >2, <3
+openpiv >=0.25, <1
+scipy >1, <2

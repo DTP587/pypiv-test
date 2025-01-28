@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 
 HOME_DIR = Path(__file__).parent
 
-PRS_DIR = HOME_DIR / "processed_videos" / "CiCfl-8_diff-Full.avi"
+PRS_DIR = HOME_DIR / "processed_videos" / "CiCfl-8_diff.avi"
 vidcap = cv2.VideoCapture(PRS_DIR)
 
 PX, PY = 80, 0

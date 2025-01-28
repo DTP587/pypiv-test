@@ -9,9 +9,9 @@ from scipy.ndimage import convolve
 from matplotlib import pyplot as plt
 
 HOME_DIR = Path(__file__).parent
-OUT_DIR = HOME_DIR / outputs
+OUT_DIR = HOME_DIR / "outputs"
 
-VID_DIR = HOME_DIR / "processed_videos" / "CiCfl-8_diff-Full.avi"
+VID_DIR = HOME_DIR / "processed_videos" / "CiCfl-8_diff.avi"
 vidcap = cv2.VideoCapture(VID_DIR)
 
 ORG_DIR = HOME_DIR / "original_videos" / "CiCfl-8.mp4"
@@ -31,7 +31,7 @@ MAX_FRAME = int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT))
 fourcc = cv2.VideoWriter_fourcc(*'MJPG')  # Codec for MP4
 
 output = cv2.VideoWriter(
-    OUT_DIR / "CiCfl-8.speed.avi",
+    OUT_DIR / "CiCfl-8-diff.speed.avi",
     fourcc,
     FPS,
     (1100, 1600),  # (784, 1142),
