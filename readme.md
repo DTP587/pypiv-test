@@ -1,11 +1,34 @@
-# PIV with `opencv-python`, `open-piv` and `scipy`
+# PIV with `opencv-python`, `openpiv-python` and `scipy`
 
-This is a little test of PIV capabilities using `opencv`, `ffmpeg`, `scipy` and `open-piv`.
+Test of PIV capabilities using `opencv`, `openpiv-python` and `scipy`.
 
-01 - testing import of video file a few frames at a time
-02 - move to comparing frames of the video file and extracting the output as a video
-03 - tracking the particles and extracting general direction trends without any overheads
-04 - try some hacky methods of smoothing the vectors using the difference between frames to highlight change
+
+## Requirements
+
+Check `requirements.txt` for a full list. `opencv-python` requires `ffmpeg` accessible in your environment. Recommend making a virtual environment:
+
+```sh
+python -m venv pypiv-test
+source pypiv-test/bin/activate  # This line will differ on Windows 
+```
+
+Then let pip install the requirements file.
+
+```sh
+pip install -r requirements.txt
+```
+
+Used python 3.13, but any version above 3 should work fine.
+
+
+## File Description
+
+01 - Testing import of video file a few frames at a time
+02 - Move to comparing frames of the video file and extracting the output as a video
+03 - Tracking the particles and extracting general direction trends without any overheads
+04 - Improve results of 03, with smoothing and using difference
+05 - Use openpiv builtins for a better output
+
 
 ## Precedents
 
