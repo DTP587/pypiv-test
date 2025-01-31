@@ -12,7 +12,7 @@ python -m venv pypiv-test
 source pypiv-test/bin/activate  # This line will differ on Windows 
 ```
 
-Then let pip install the requirements file.
+Then let pip install the requirements.
 
 ```sh
 pip install -r requirements.txt
@@ -25,9 +25,9 @@ Used python 3.13, but any version above 3 should work fine.
 
 01 - Testing import of video file a few frames at a time
 02 - Move to comparing frames of the video file and extracting the output as a video
-03 - Tracking the particles and extracting general direction trends without any overheads
-04 - Improve results of 03, with smoothing and using difference
-05 - Use openpiv builtins for a better output
+03 - Tracking the particles and extracting general direction trends with python
+04 - Improve results of 03, with smoothing and using frame difference to infer speed
+05 - Used openpiv builtins to test capabilities
 
 
 ## Precedents
