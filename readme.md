@@ -24,7 +24,7 @@ Once installed, run the files sequentially.
 python 01_read_video.py
 ```
 
-I used python 3.13, but any version above 3 should work fine.
+I used python 3.13, but any version above 3.9 should work fine.
 
 
 ## File Description
